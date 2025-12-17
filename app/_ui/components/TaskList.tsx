@@ -11,7 +11,6 @@ type TaskListProps = {
 export default function TaskList({ tasks, service }: TaskListProps) {
   async function handleDelete(id: string) {
     await service.deleteTask.execute(id);
-    // refresh simple (à remplacer plus tard par state global ou event bus)
     location.reload();
   }
 
